@@ -12,6 +12,7 @@ class SearchBar extends React.Component {
     };
 
     //binding onInputChange so this.setState is in the right context
+    //without this, this will have the incorrect context when running the function
     this.onInputChange = this.onInputChange.bind(this);
     this.onSubmitForm = this.onSubmitForm.bind(this);
   };
@@ -51,8 +52,10 @@ class SearchBar extends React.Component {
   }
 };
 
+//hooks up the action creator fetchweather to the search bar container
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({fetchWeather}, dispatch );
 }
 
+//null don't need to maint state and function is always passed second
 export default connect (null, mapDispatchToProps)(SearchBar)

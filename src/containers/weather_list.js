@@ -51,7 +51,7 @@ class WeatherList extends React.Component {
 };
 
 function mapStateToProps(state) {
-  //we assigned weather as the key in reducer combine
+  //state.weather because we declared it as such in the reducer
   return { weather: state.weather}
 }
 
